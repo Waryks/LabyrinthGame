@@ -13,9 +13,7 @@ using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
-    /*NOTEPAD 
-      Am sters butoanele acuma trebuie sa fac jocul zoom pe player !
-   */
+    
     public partial class Form1 : Form
     {
         int n, m, n1, m1, start, finish, d, g, num, cat = 0, pozX, pozY, dx, dy, stx, sty, sfx, sfy, cheiex, cheiey, x, tstart=0, timp;
@@ -55,7 +53,7 @@ namespace WindowsFormsApp1
                 return 0;
             else
                 return 1;
-        } //SANSA PT PERETE SAU DRUM
+        } //Chance for wall or road
         public void genRand()
         {
             Random rnd = new Random();
@@ -78,26 +76,26 @@ namespace WindowsFormsApp1
                 cheiex = rnd.Next(2, n);
                 cheiey = rnd.Next(2, n);
             }
-        } //GENERARE POZITIE INCEPUT SI SFARSIT
+        } //Generating start points and finish
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
 
 
-        } //NIMIC
+        } //Nothing
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
 
 
 
-        } //NIMIC
+        } //Nothing
 
         public void button1_Click(object sender, EventArgs e)
         {
             if (x < 30 || x > 50)
             {
-                MessageBox.Show("Un numar intre din intervalul [30-50]!");
+                MessageBox.Show("A number between [30-50]!");
                 x = Convert.ToInt32(numericUpDown1.Text);
             }
             else {
@@ -260,7 +258,7 @@ namespace WindowsFormsApp1
                             i--;
                         }
                     }
-                } //GENERARE START SI FINISH
+                } //Generating start and finish
                 void genAby(int k, int l)
                 {
 
@@ -338,7 +336,7 @@ namespace WindowsFormsApp1
                         }
                     }
 
-                } //GENERARE MATRICE
+                } //Generating matrix
                 void verifica(int k, int l)
                 {
                     if (verif[k, l] == 2)
@@ -362,7 +360,7 @@ namespace WindowsFormsApp1
                             }
                             catch { }
                     }
-                } //CONDITIE PT GENERARE LABIRINT
+                } //Condition for generating the labyrinth
                 try
                 {
                     for (i = 1; i <= n1; i++)
@@ -375,7 +373,7 @@ namespace WindowsFormsApp1
                 }
                 catch
                 {
-                } //STERGEM BUTOANELE
+                } //Deleting the buttons
 
                 int dx = (this.Width - 10 * n) / 2;
                 int dy = (this.Height - 10 * m) / 2;
@@ -393,7 +391,7 @@ namespace WindowsFormsApp1
                         t[i, j].FlatStyle = FlatStyle.Popup;
                         this.Controls.Add(t[i, j]);
                     }
-                } //DESENAM BUTOANELE
+                } //Drawing the buttons
                   /*for (i = 1; i <= n; i++)
                   {
                       for(j=1; j<=m;j++)
@@ -411,15 +409,15 @@ namespace WindowsFormsApp1
 
                     verif[i, n] = 3;
 
-                } //PERETE EXTERIOR I
+                } //Exterior wall I
                 for (i = 1; i <= m1; i++)
                 {
                     verif[1, i] = 3;
                     verif[n, i] = 3;
-                } //PERETE EXTERIOR II
+                } //Exterior wall II
 
                 cat = n * 2 + (m * 2) - 4; //{
-                Random rnd = new Random(); //{GERARE DRUM RANDOM
+                Random rnd = new Random(); //{Generating random road
                 while (cat < n * m)
                 {
                     num = rnd.Next(1, (m * n));
@@ -458,7 +456,7 @@ namespace WindowsFormsApp1
                         }
 
 
-                    } //VERIFICAM SPATII GOALE
+                    } //Verifying spaces
                 for (i = 2; i < n; i++)
                     for (j = 2; j < n; j++)
                     {
@@ -483,7 +481,7 @@ namespace WindowsFormsApp1
 
                         }
 
-                    } //TESTUL 2 PT VERIFICARE SPATII GOALE
+                    } //Test 2 for verifying spaces
 
                 /*for (i = 1; i <= n; i++)
                     for (j = 1; j <= m; j++)
@@ -605,7 +603,7 @@ namespace WindowsFormsApp1
                                 if (pozX == sfx && pozY == sfy)
                                 {
                                     timer1.Stop();
-                                    MessageBox.Show("Bravo! Ai terminat in " + timp + " secunde!");
+                                    MessageBox.Show("Good job! You finished in " + timp + " seconds!");
 
                                     this.Close();
                                 }
@@ -672,7 +670,7 @@ namespace WindowsFormsApp1
                                 if (pozX == sfx && pozY == sfy)
                                 {
                                     timer1.Stop();
-                                    MessageBox.Show("Bravo! Ai terminat in " + timp + " secunde!");
+                                    MessageBox.Show("Good job! You finished in " + timp + " seconds");
 
                                     this.Close();
                                 }
@@ -739,7 +737,7 @@ namespace WindowsFormsApp1
                                 if (pozX == sfx && pozY == sfy)
                                 {
                                     timer1.Stop();
-                                    MessageBox.Show("Bravo! Ai terminat in " + timp + " secunde!");
+                                    MessageBox.Show("Good job! You finished in " + timp + " seconds");
 
                                     this.Close();
                                 }
@@ -805,7 +803,7 @@ namespace WindowsFormsApp1
                                 if (pozX == sfx && pozY == sfy)
                                 {
                                     timer1.Stop();
-                                    MessageBox.Show("Bravo! Ai terminat in " + timp + " secunde!");
+                                    MessageBox.Show("Good job! You finished in " + timp + " seconds!");
 
                                     this.Close();
                                 }
